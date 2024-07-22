@@ -1,5 +1,5 @@
-#Allow user to input single-byte XOR cipher
-    #If not, use default
+# Allow user to input single-byte XOR cipher
+    # If not, use default
 def single_byte_XOR(hex):
     if (hex == ""):
         hex = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
@@ -7,14 +7,14 @@ def single_byte_XOR(hex):
     import matplotlib.pylab as plt
     import pandas as pd
     import sys
-    sys.path.append('Mods') #adds the folder with the functions to the files checked
-    sys.path.append('Set1') #adds the folder with the functions to the files checked
+    sys.path.append('Mods') # adds the folder with the functions to the files checked
+    sys.path.append('Set1') # adds the folder with the functions to the files checked
     from Variables import base64, base64_English_Freq
     from Challenge1 import hex_to_base64
-#Hex to base64
+# Hex to base64
     base64_from_hex = hex_to_base64(hex)
 
-#Frequency table of characters
+# Frequency table of characters
     freq = dict()
     for char in base64[:-2]:
         char = char.lower()
@@ -26,7 +26,7 @@ def single_byte_XOR(hex):
     # print(freq_series)
     # print("\n\n\n",freq_series.sum())
     base64_English_Freq_series = pd.Series(base64_English_Freq)
-    #print(base64_English_Freq_series)
+    # print(base64_English_Freq_series)
     df = pd.DataFrame({"Given Hex (Red)":freq_series,"English Fingerprint (Blue)":base64_English_Freq_series})
     ax = df.plot.bar(color=["Red","Blue"], rot=0, title="When ready, press any button to enter a guess to move the red RIGHT\nPress <ENTER> to quite\n<<Answer will show here>>")
     ax.set_xlabel("Character")
@@ -50,19 +50,19 @@ def single_byte_XOR(hex):
 
 
 
-#Show frequency table to user
-    #Show base64_English_Freq to user
-    #Matplotlib or some data visualization? Show fingerprints against each other
+# Show frequency table to user
+    # Show base64_English_Freq to user
+    # Matplotlib or some data visualization? Show fingerprints against each other
 
 
-#Allow user to select a shift key
+# Allow user to select a shift key
 
 
-#Display the base64 encoded string
-#Display the base64 decoded string
-#Display the hex decoded string
+# Display the base64 encoded string
+# Display the base64 decoded string
+# Display the hex decoded string
 
-#Ask them if they want to try another shift key
+# Ask them if they want to try another shift key
 
 if (__name__ == '__main__'):
     print("Note: Default value will be the string provided on the website if the string is empty")
